@@ -1,0 +1,54 @@
+<div
+  class="tw-py-2  tw-px-6 tw-mb-12 !tw-relative tw-flex tw-flex-row tw-items-center !tw-bg-neutral-100 tw-border-b tw-border-gray-200 tw-justify-between">
+  <div class="infoLeft">
+    <div class="agrilogo tw-flex tw-flex-row tw-items-center tw-gap-3">
+      <button
+        (click)="defaultLayoutService.toggleSidebar()"
+        type="button"
+        cButton
+        color="light"
+        variant="ghost"
+        class="!tw-w-7 !tw-h-7 !tw-flex !tw-items-center !tw-justify-center !tw-text-secondary hover:!tw-bg-gray-200"
+      >
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor"
+                                                                                                   d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/></svg>
+        </span>
+      </button>
+      <div class="tw-flex tw-flex-row tw-items-center tw-gap-3">
+        <div>
+          <img src="/assets/port.png" alt="logo port" class="tw-h-10 tw-w-10  tw-min-h-10 tw-min-w-10 tw-mr-2">
+        </div>
+        <div class="detail">
+          <h6
+            class="tw-max-w-md !tw-truncate tw-text-[0.80rem] tw-tracking-wide tw-text-green-700 tw-leading-6 tw-my-0">
+            Guichet Unique des Formalités
+            et Documents (GUFORD)
+
+          </h6>
+          <h5 class="tw-text-sm tw-my-0 tw-font-semibold">FORMULAIRE GUFORD</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="inforight tw-flex tw-flex-row !tw-gap-2">
+    <button appTippyDirective [tooltip]="'Se deconnecter'"
+      [tooltipOptions]="{placement: 'top', theme: 'faw-light', arrow: true}"
+      class="!tw-max-h-8 !tw-bg-white hover:!tw-bg-white  !tw-text-secondary !tw-shadow" size="sm" cButton color="light"
+      variant="ghost" (click)="logout()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="Logout-2--Streamline-Ultimate" height="16"
+        width="16">
+        <desc>Logout 2 Streamline Icon: https://streamlinehq.com</desc>
+        <g>
+          <path
+            d="M17.51 18.5a1 1 0 0 0 -1 1v0.5a0.5 0.5 0 0 1 -0.5 0.5h-5.5A0.5 0.5 0 0 1 10 20V4a0.5 0.5 0 0 1 0.5 -0.5H16a0.5 0.5 0 0 1 0.5 0.5v1a1 1 0 0 0 2 0V2.5a1 1 0 0 0 -1 -1H10v-1a0.51 0.51 0 0 0 -0.18 -0.39A0.53 0.53 0 0 0 9.4 0l-9 2a0.5 0.5 0 0 0 -0.4 0.5v19a0.5 0.5 0 0 0 0.4 0.5l9 2a0.51 0.51 0 0 0 0.6 -0.5v-1h7.5a1 1 0 0 0 1 -1v-2a1 1 0 0 0 -0.99 -1Zm-10 -6A1.5 1.5 0 1 1 6 11a1.5 1.5 0 0 1 1.51 1.5Z"
+            fill="currentColor" stroke-width="1"></path>
+          <path
+            d="m23.55 11.67 -4.88 -3.25a1 1 0 0 0 -1 -0.05 1 1 0 0 0 -0.53 0.88V11H13a1.5 1.5 0 0 0 0 3h4.13v1.75a1 1 0 0 0 0.53 0.88 0.94 0.94 0 0 0 0.47 0.12 1 1 0 0 0 0.55 -0.17l4.88 -3.25a1 1 0 0 0 0 -1.66Z"
+            fill="currentColor" stroke-width="1"></path>
+        </g>
+      </svg>
+
+    </button>
+  </div>
+</div>

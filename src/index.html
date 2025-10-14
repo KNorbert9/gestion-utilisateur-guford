@@ -1,13 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
+<!--
+Project: Demande d'habillitation - GUFORD ministérielle
+Author: Africa Consulting Leader
+Homepage: https://acl.com
+-----
+Last Modified: Monday, 14th March 2025 12:31:21 pm
+Modified By: Africa Consulting Leader
+-----
+Copyright 2024 Africa Consulting Leader
+-->
 <html lang="en">
 <head>
+
   <meta charset="utf-8">
-  <title>GestionUtilisateurGuford</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Demande d'habillitation - GUFORD" name="title"/>
+  <meta
+    content="Formulaires des formalités Ministérielles et HAUQE"
+    name="description"
+  />
+  <meta content="Africa Consulting Leader" name="author"/>
+  <meta
+    content="Formulaire des formalités Ministérielles et HAUQE"
+    name="keyword"
+  />
+
+  <!-- Open Graph / Facebook -->
+  <meta content="website" property="og:type"/>
+  <meta content="https://formulaire.guford.com/" property="og:url"/>
+  <meta
+    content="Formulaire des formalités Ministérielles et HAUQE"
+    property="og:title"
+  />
+  <meta
+    content="Formulaire des formalités Ministérielles et HAUQE"
+    property="og:description"
+  />
+  <meta
+    content="https://formulaire.guford.com/assets/preview-vbs.png"
+    property="og:image"
+  />
+
+  <!-- Twitter -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="https://vbs.guford.com/" name="twitter:url"/>
+  <meta
+    content="Demande d'habillitation - GUFORD ministérielle"
+    name="twitter:title"
+  />
+  <meta
+    content="Demande d'habillitation - GUFORD ministérielle"
+    name="twitter:description"
+  />
+  <meta
+    content="https://vbs.guford.com/assets/preview-vbs.png"
+    name="twitter:image"
+  />
+
+  <!-- PWA -->
+  <meta content="#ffffff" name="theme-color"/>
+  <link href="manifest.webmanifest" rel="manifest"/>
+
+  <link href="assets/logo-port.jpg" rel="image_src" type="image/png"/>
+  <link href="assets/logo-port.jpg" rel="shortcut icon" type="image/png"/>
+  <link href="assets/logo-port.jpg" rel="icon" type="image/png"/>
+
+  <link href="assets/logo-port.jpg" rel="icon" type="image/x-icon">
+  <title>Demande d'habillitation - GUFORD ministérielle</title>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M7DLQTY7NJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'GTM-5MV2QBJ8');
+</script>
+
 <body>
-  <app-root></app-root>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe height="0"
+          src="https://www.googletagmanager.com/ns.html?id=GTM-5MV2QBJ8"
+          style="display:none;visibility:hidden" width="0">
+
+  </iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<app-root>
+  <div class="fade show" style="text-align: center; padding-top: calc(100vh / 2); height: 100vh">
+    <i class="spinner-grow spinner-grow-sm"></i>
+    <span class="m-1">Chargement...</span>
+  </div>
+</app-root>
 </body>
+
+
 </html>

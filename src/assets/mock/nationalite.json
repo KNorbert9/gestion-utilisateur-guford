@@ -1,0 +1,770 @@
+[
+  {
+    "pays": "Afghanistan",
+    "nationalite": "Afghan"
+  },
+  {
+    "pays": "Afrique du Sud",
+    "nationalite": "Sud-Africain"
+  },
+  {
+    "pays": "Albanie",
+    "nationalite": "Albanais"
+  },
+  {
+    "pays": "Algérie",
+    "nationalite": "Algérien"
+  },
+  {
+    "pays": "Allemagne",
+    "nationalite": "Allemand"
+  },
+  {
+    "pays": "Andorre",
+    "nationalite": "Andorran"
+  },
+  {
+    "pays": "Angola",
+    "nationalite": "Angolais"
+  },
+  {
+    "pays": "Antigua-et-Barbuda",
+    "nationalite": "Antiguais"
+  },
+  {
+    "pays": "Arabie Saoudite",
+    "nationalite": "Saoudien"
+  },
+  {
+    "pays": "Argentine",
+    "nationalite": "Argentin"
+  },
+  {
+    "pays": "Arménie",
+    "nationalite": "Arménien"
+  },
+  {
+    "pays": "Australie",
+    "nationalite": "Australien"
+  },
+  {
+    "pays": "Autriche",
+    "nationalite": "Autrichien"
+  },
+  {
+    "pays": "Azerbaïdjan",
+    "nationalite": "Azerbaïdjanais"
+  },
+  {
+    "pays": "Bahamas",
+    "nationalite": "Bahaméen"
+  },
+  {
+    "pays": "Bahreïn",
+    "nationalite": "Bahreïni"
+  },
+  {
+    "pays": "Bangladesh",
+    "nationalite": "Bangladais"
+  },
+  {
+    "pays": "Barbade",
+    "nationalite": "Barbadien"
+  },
+  {
+    "pays": "Belgique",
+    "nationalite": "Belge"
+  },
+  {
+    "pays": "Belize",
+    "nationalite": "Bélizien"
+  },
+  {
+    "pays": "Bénin",
+    "nationalite": "Béninois"
+  },
+  {
+    "pays": "Bhoutan",
+    "nationalite": "Bhoutanais"
+  },
+  {
+    "pays": "Biélorussie",
+    "nationalite": "Biélorusse"
+  },
+  {
+    "pays": "Birmanie (Myanmar)",
+    "nationalite": "Birmane"
+  },
+  {
+    "pays": "Bolivie",
+    "nationalite": "Bolivien"
+  },
+  {
+    "pays": "Bosnie-Herzégovine",
+    "nationalite": "Bosniaque"
+  },
+  {
+    "pays": "Botswana",
+    "nationalite": "Botswanais"
+  },
+  {
+    "pays": "Brésil",
+    "nationalite": "Brésilien"
+  },
+  {
+    "pays": "Brunei",
+    "nationalite": "Brunéien"
+  },
+  {
+    "pays": "Bulgarie",
+    "nationalite": "Bulgare"
+  },
+  {
+    "pays": "Burkina Faso",
+    "nationalite": "Burkinabé"
+  },
+  {
+    "pays": "Burundi",
+    "nationalite": "Burundais"
+  },
+  {
+    "pays": "Cambodge",
+    "nationalite": "Cambodgien"
+  },
+  {
+    "pays": "Cameroun",
+    "nationalite": "Camerounais"
+  },
+  {
+    "pays": "Canada",
+    "nationalite": "Canadien"
+  },
+  {
+    "pays": "Cap-Vert",
+    "nationalite": "Cap-verdien"
+  },
+  {
+    "pays": "Chili",
+    "nationalite": "Chilien"
+  },
+  {
+    "pays": "Chine",
+    "nationalite": "Chinois"
+  },
+  {
+    "pays": "Chypre",
+    "nationalite": "Chypriote"
+  },
+  {
+    "pays": "Colombie",
+    "nationalite": "Colombien"
+  },
+  {
+    "pays": "Comores",
+    "nationalite": "Comorien"
+  },
+  {
+    "pays": "Congo (Brazzaville)",
+    "nationalite": "Congolais"
+  },
+  {
+    "pays": "Congo (Kinshasa)",
+    "nationalite": "Congolais"
+  },
+  {
+    "pays": "Corée du Nord",
+    "nationalite": "Nord-Coréen"
+  },
+  {
+    "pays": "Corée du Sud",
+    "nationalite": "Sud-Coréen"
+  },
+  {
+    "pays": "Costa Rica",
+    "nationalite": "Costaricien"
+  },
+  {
+    "pays": "Côte d'Ivoire",
+    "nationalite": "Ivoirien"
+  },
+  {
+    "pays": "Croatie",
+    "nationalite": "Croate"
+  },
+  {
+    "pays": "Cuba",
+    "nationalite": "Cubain"
+  },
+  {
+    "pays": "Danemark",
+    "nationalite": "Danois"
+  },
+  {
+    "pays": "Djibouti",
+    "nationalite": "Djiboutien"
+  },
+  {
+    "pays": "Dominique",
+    "nationalite": "Dominicain"
+  },
+  {
+    "pays": "Égypte",
+    "nationalite": "Égyptien"
+  },
+  {
+    "pays": "Salvador",
+    "nationalite": "Salvadorien"
+  },
+  {
+    "pays": "Émirats Arabes Unis",
+    "nationalite": "Émirati"
+  },
+  {
+    "pays": "Équateur",
+    "nationalite": "Équatorien"
+  },
+  {
+    "pays": "Érythrée",
+    "nationalite": "Érythréen"
+  },
+  {
+    "pays": "Espagne",
+    "nationalite": "Espagnol"
+  },
+  {
+    "pays": "Estonie",
+    "nationalite": "Estonien"
+  },
+  {
+    "pays": "Eswatini",
+    "nationalite": "Eswatinien"
+  },
+  {
+    "pays": "États-Unis",
+    "nationalite": "Américain"
+  },
+  {
+    "pays": "Éthiopie",
+    "nationalite": "Éthiopien"
+  },
+  {
+    "pays": "Fidji",
+    "nationalite": "Fidjien"
+  },
+  {
+    "pays": "Finlande",
+    "nationalite": "Finlandais"
+  },
+  {
+    "pays": "France",
+    "nationalite": "Français"
+  },
+  {
+    "pays": "Gabon",
+    "nationalite": "Gabonais"
+  },
+  {
+    "pays": "Gambie",
+    "nationalite": "Gambien"
+  },
+  {
+    "pays": "Géorgie",
+    "nationalite": "Géorgien"
+  },
+  {
+    "pays": "Ghana",
+    "nationalite": "Ghanéen"
+  },
+  {
+    "pays": "Grèce",
+    "nationalite": "Grec"
+  },
+  {
+    "pays": "Grenade",
+    "nationalite": "Grenadien"
+  },
+  {
+    "pays": "Guatemala",
+    "nationalite": "Guatémaltèque"
+  },
+  {
+    "pays": "Guinée",
+    "nationalite": "Guinéen"
+  },
+  {
+    "pays": "Guinée-Bissau",
+    "nationalite": "Bissau-Guinéen"
+  },
+  {
+    "pays": "Guinée Équatoriale",
+    "nationalite": "Équato-Guinéen"
+  },
+  {
+    "pays": "Guyana",
+    "nationalite": "Guyanais"
+  },
+  {
+    "pays": "Haïti",
+    "nationalite": "Haïtien"
+  },
+  {
+    "pays": "Honduras",
+    "nationalite": "Hondurien"
+  },
+  {
+    "pays": "Hongrie",
+    "nationalite": "Hongrois"
+  },
+  {
+    "pays": "Inde",
+    "nationalite": "Indien"
+  },
+  {
+    "pays": "Indonésie",
+    "nationalite": "Indonésien"
+  },
+  {
+    "pays": "Iran",
+    "nationalite": "Iranien"
+  },
+  {
+    "pays": "Iraq",
+    "nationalite": "Iraquien"
+  },
+  {
+    "pays": "Irlande",
+    "nationalite": "Irlandais"
+  },
+  {
+    "pays": "Islande",
+    "nationalite": "Islandais"
+  },
+  {
+    "pays": "Israël",
+    "nationalite": "Israélien"
+  },
+  {
+    "pays": "Italie",
+    "nationalite": "Italien"
+  },
+  {
+    "pays": "Jamaïque",
+    "nationalite": "Jamaïcain"
+  },
+  {
+    "pays": "Japon",
+    "nationalite": "Japonais"
+  },
+  {
+    "pays": "Jordanie",
+    "nationalite": "Jordanien"
+  },
+  {
+    "pays": "Kazakhstan",
+    "nationalite": "Kazakh"
+  },
+  {
+    "pays": "Kenya",
+    "nationalite": "Kenyan"
+  },
+  {
+    "pays": "Kirghizistan",
+    "nationalite": "Kirghize"
+  },
+  {
+    "pays": "Kiribati",
+    "nationalite": "Kiribatien"
+  },
+  {
+    "pays": "Koweït",
+    "nationalite": "Koweïtien"
+  },
+  {
+    "pays": "Laos",
+    "nationalite": "Laotien"
+  },
+  {
+    "pays": "Lettonie",
+    "nationalite": "Letton"
+  },
+  {
+    "pays": "Liban",
+    "nationalite": "Libanais"
+  },
+  {
+    "pays": "Libéria",
+    "nationalite": "Libérien"
+  },
+  {
+    "pays": "Libye",
+    "nationalite": "Libyen"
+  },
+  {
+    "pays": "Liechtenstein",
+    "nationalite": "Liechtensteinois"
+  },
+  {
+    "pays": "Lituanie",
+    "nationalite": "Lituanien"
+  },
+  {
+    "pays": "Luxembourg",
+    "nationalite": "Luxembourgeois"
+  },
+  {
+    "pays": "Macédoine du Nord",
+    "nationalite": "Macédonien"
+  },
+  {
+    "pays": "Madagascar",
+    "nationalite": "Malgache"
+  },
+  {
+    "pays": "Malawi",
+    "nationalite": "Malawien"
+  },
+  {
+    "pays": "Malaisie",
+    "nationalite": "Malaisien"
+  },
+  {
+    "pays": "Maldives",
+    "nationalite": "Maldivien"
+  },
+  {
+    "pays": "Mali",
+    "nationalite": "Malien"
+  },
+  {
+    "pays": "Malte",
+    "nationalite": "Maltais"
+  },
+  {
+    "pays": "Maroc",
+    "nationalite": "Marocain"
+  },
+  {
+    "pays": "Marshall (Îles)",
+    "nationalite": "Marshallais"
+  },
+  {
+    "pays": "Mauritanie",
+    "nationalite": "Mauritanien"
+  },
+  {
+    "pays": "Maurice",
+    "nationalite": "Mauricien"
+  },
+  {
+    "pays": "Mexique",
+    "nationalite": "Mexicain"
+  },
+  {
+    "pays": "Micronésie",
+    "nationalite": "Micronésien"
+  },
+  {
+    "pays": "Moldavie",
+    "nationalite": "Moldave"
+  },
+  {
+    "pays": "Monaco",
+    "nationalite": "Monégasque"
+  },
+  {
+    "pays": "Mongolie",
+    "nationalite": "Mongol"
+  },
+  {
+    "pays": "Monténégro",
+    "nationalite": "Monténégrin"
+  },
+  {
+    "pays": "Mozambique",
+    "nationalite": "Mozambicain"
+  },
+  {
+    "pays": "Namibie",
+    "nationalite": "Namibien"
+  },
+  {
+    "pays": "Nauru",
+    "nationalite": "Nauruan"
+  },
+  {
+    "pays": "Népal",
+    "nationalite": "Népalien"
+  },
+  {
+    "pays": "Nicaragua",
+    "nationalite": "Nicaraguayen"
+  },
+  {
+    "pays": "Niger",
+    "nationalite": "Nigérien"
+  },
+  {
+    "pays": "Nigeria",
+    "nationalite": "Nigérian"
+  },
+  {
+    "pays": "Norvège",
+    "nationalite": "Norvégien"
+  },
+  {
+    "pays": "Nouvelle-Zélande",
+    "nationalite": "Néo-Zélandais"
+  },
+  {
+    "pays": "Oman",
+    "nationalite": "Omanais"
+  },
+  {
+    "pays": "Ouganda",
+    "nationalite": "Ougandais"
+  },
+  {
+    "pays": "Ouzbékistan",
+    "nationalite": "Ouzbek"
+  },
+  {
+    "pays": "Pakistan",
+    "nationalite": "Pakistanais"
+  },
+  {
+    "pays": "Palaos",
+    "nationalite": "Palau"
+  },
+  {
+    "pays": "Panama",
+    "nationalite": "Panaméen"
+  },
+  {
+    "pays": "Papouasie-Nouvelle-Guinée",
+    "nationalite": "Papouasien"
+  },
+  {
+    "pays": "Paraguay",
+    "nationalite": "Paraguayen"
+  },
+  {
+    "pays": "Pays-Bas",
+    "nationalite": "Néerlandais"
+  },
+  {
+    "pays": "Pérou",
+    "nationalite": "Péruvien"
+  },
+  {
+    "pays": "Philippines",
+    "nationalite": "Philippin"
+  },
+  {
+    "pays": "Pologne",
+    "nationalite": "Polonais"
+  },
+  {
+    "pays": "Portugal",
+    "nationalite": "Portugais"
+  },
+  {
+    "pays": "Qatar",
+    "nationalite": "Qatari"
+  },
+  {
+    "pays": "République Centrafricaine",
+    "nationalite": "Centrafricain"
+  },
+  {
+    "pays": "République Tchèque",
+    "nationalite": "Tchèque"
+  },
+  {
+    "pays": "Roumanie",
+    "nationalite": "Roumain"
+  },
+  {
+    "pays": "Royaume-Uni",
+    "nationalite": "Britannique"
+  },
+  {
+    "pays": "Russie",
+    "nationalite": "Russe"
+  },
+  {
+    "pays": "Rwanda",
+    "nationalite": "Rwandais"
+  },
+  {
+    "pays": "Saint-Christophe-et-Niévès",
+    "nationalite": "Saint-Kittien"
+  },
+  {
+    "pays": "Saint-Marin",
+    "nationalite": "Saint-Marinais"
+  },
+  {
+    "pays": "Saint-Vincent-et-les Grenadines",
+    "nationalite": "Vincentien"
+  },
+  {
+    "pays": "Sainte-Lucie",
+    "nationalite": "Sainte-Lucienne"
+  },
+  {
+    "pays": "Salomon (Îles)",
+    "nationalite": "Salomonais"
+  },
+  {
+    "pays": "Samoa",
+    "nationalite": "Samoan"
+  },
+  {
+    "pays": "Sao Tomé-et-Principe",
+    "nationalite": "São-toméen"
+  },
+  {
+    "pays": "Sénégal",
+    "nationalite": "Sénégalais"
+  },
+  {
+    "pays": "Serbie",
+    "nationalite": "Serbe"
+  },
+  {
+    "pays": "Seychelles",
+    "nationalite": "Seychellois"
+  },
+  {
+    "pays": "Sierra Leone",
+    "nationalite": "Sierra-léonais"
+  },
+  {
+    "pays": "Singapour",
+    "nationalite": "Singapourien"
+  },
+  {
+    "pays": "Slovaquie",
+    "nationalite": "Slovaque"
+  },
+  {
+    "pays": "Slovénie",
+    "nationalite": "Slovène"
+  },
+  {
+    "pays": "Somalie",
+    "nationalite": "Somalien"
+  },
+  {
+    "pays": "Soudan",
+    "nationalite": "Soudanais"
+  },
+  {
+    "pays": "Soudan du Sud",
+    "nationalite": "Sud-Soudanais"
+  },
+  {
+    "pays": "Sri Lanka",
+    "nationalite": "Sri-Lankais"
+  },
+  {
+    "pays": "Suède",
+    "nationalite": "Suédois"
+  },
+  {
+    "pays": "Suisse",
+    "nationalite": "Suisse"
+  },
+  {
+    "pays": "Suriname",
+    "nationalite": "Surinamien"
+  },
+  {
+    "pays": "Syrie",
+    "nationalite": "Syrien"
+  },
+  {
+    "pays": "Tadjikistan",
+    "nationalite": "Tadjik"
+  },
+  {
+    "pays": "Tanzanie",
+    "nationalite": "Tanzanien"
+  },
+  {
+    "pays": "Tchad",
+    "nationalite": "Tchadien"
+  },
+  {
+    "pays": "Thaïlande",
+    "nationalite": "Thaïlandais"
+  },
+  {
+    "pays": "Timor-Leste",
+    "nationalite": "Timorais"
+  },
+  {
+    "pays": "Togo",
+    "nationalite": "Togolais"
+  },
+  {
+    "pays": "Tonga",
+    "nationalite": "Tongien"
+  },
+  {
+    "pays": "Trinité-et-Tobago",
+    "nationalite": "Trinitaire"
+  },
+  {
+    "pays": "Tunisie",
+    "nationalite": "Tunisien"
+  },
+  {
+    "pays": "Turkménistan",
+    "nationalite": "Turkmène"
+  },
+  {
+    "pays": "Turquie",
+    "nationalite": "Turc"
+  },
+  {
+    "pays": "Tuvalu",
+    "nationalite": "Tuvaluan"
+  },
+  {
+    "pays": "Ukraine",
+    "nationalite": "Ukrainien"
+  },
+  {
+    "pays": "Uruguay",
+    "nationalite": "Uruguayen"
+  },
+  {
+    "pays": "Vanuatu",
+    "nationalite": "Vanuatuen"
+  },
+  {
+    "pays": "Vatican",
+    "nationalite": "Vatican"
+  },
+  {
+    "pays": "Venezuela",
+    "nationalite": "Vénézuélien"
+  },
+  {
+    "pays": "Vietnam",
+    "nationalite": "Vietnamien"
+  },
+  {
+    "pays": "Yémen",
+    "nationalite": "Yéménite"
+  },
+  {
+    "pays": "Zambie",
+    "nationalite": "Zambien"
+  },
+  {
+    "pays": "Zimbabwe",
+    "nationalite": "Zimbabwéen"
+  }
+]

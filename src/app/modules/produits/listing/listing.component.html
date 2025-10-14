@@ -1,0 +1,65 @@
+<div class="title tw-flex tw-flex-row tw-items-center tw-justify-between">
+  <div class="tw-flex tw-flex-row tw-items-center tw-gap-2">
+    <div class="tw-text-[1.1rem] md:tw-text-[1.2rem] tw-font-bold">
+            <span class="tw-text-primary tw-mb-0 tw-text-sm tw-font-medium tw-tracking-wider">Demande d'habillitation - GUFORD
+                d’habilitation.</span>
+      <br>
+      <span>Demande d'habillitation - GUFORD</span>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-5">
+  <div class="col-md-4">
+      <!-- Listing left menu -->
+      <div class="my-3">
+          <a [routerLink]="['transitaire']" routerLinkActive #rlaTrans="routerLinkActive" [routerLinkActiveOptions]="{ exact: true }">
+              <c-card
+                      [ngClass]="{
+        'card': true,
+        'tw-ring-2 tw-ring-green-500 tw-border-green-500 tw-bg-green-50': rlaTrans.isActive
+      }"
+                      class="transition-all"
+              >
+                  <c-card-body class="text-center">
+                      <h6 class="mt-3">Transitaire</h6>
+                      <small>Formalités liées aux transitaires</small>
+                  </c-card-body>
+              </c-card>
+          </a>
+      </div>
+
+      <div class="my-3">
+          <a [routerLink]="['personne-physique']" routerLinkActive #rlaPP="routerLinkActive" [routerLinkActiveOptions]="{ exact: true }">
+              <c-card [ngClass]="{
+        'card': true,
+        'tw-ring-2 tw-ring-green-500 tw-border-green-500 tw-bg-green-50': rlaPP.isActive
+      }">
+                  <c-card-body class="text-center">
+                      <h6 class="mt-3">Personne physique</h6>
+                      <small>Formalités pour particuliers</small>
+                  </c-card-body>
+              </c-card>
+          </a>
+      </div>
+
+      <div class="my-3">
+          <a [routerLink]="['personne-morale']" routerLinkActive #rlaPM="routerLinkActive" [routerLinkActiveOptions]="{ exact: true }">
+              <c-card [ngClass]="{
+        'card': true,
+        'tw-ring-2 tw-ring-green-500 tw-border-green-500 tw-bg-green-50': rlaPM.isActive
+      }">
+                  <c-card-body class="text-center">
+                      <h6 class="mt-3">Personne morale</h6>
+                      <small>Formalités pour entreprises</small>
+                  </c-card-body>
+              </c-card>
+          </a>
+      </div>
+
+  </div>
+
+  <div class="col-md-8 my-3">
+    <router-outlet></router-outlet>
+  </div>
+</div>

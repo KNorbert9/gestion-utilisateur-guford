@@ -1,0 +1,55 @@
+<div
+  class="tw-py-2 !tw-w-full tw-px-6 tw-mb-12 !tw-relative tw-flex tw-flex-row tw-items-center !tw-bg-white tw-border-b tw-border-gray-200 tw-justify-between">
+  <div class="infoLeft">
+    <div class="agrilogo tw-flex tw-flex-row tw-items-center tw-gap-3">
+      <div class="tw-flex tw-flex-row tw-items-center tw-gap-3">
+        <div class="tw-w-[9%]">
+          <img alt="logo ministere" class="tw-w-[80%] tw-mr-2"
+               src="assets/horiz-logo.png">
+        </div>
+        <div class="detail tw-ml-8">
+          <c-header-nav class="d-none d-md-flex tw-gap-4">
+            @for (tab of tabs; track tab; ) {
+              <c-nav-item
+                data-active="active"
+
+                (click)="activeTab = tab.id"
+                [ngClass]="{'tw-bg-green-200 tw-text-primary': activeTab === tab.id, 'hover:tw-opacity-50': activeTab !== tab.id}"
+                class="relative tw-rounded-full tw-px-3 tw-py-1.5 tw-font-medium tw-outline-2 outline-blue-300 focus-visible:tw-outline"
+              >
+                <a cNavLink routerLink="{{tab.link}}" routerLinkActive="active">{{ tab.label }}</a>
+              </c-nav-item>
+            }
+          </c-header-nav>
+        </div>
+      </div>
+    </div>
+    <!--<div class="detail">
+        <h6 class="tw-text-[0.80rem] tw-tracking-wide tw-text-green-700 tw-leading-6 tw-my-0">AGRICULTURE - AGENT</h6>
+        <h5 class="tw-text-sm tw-my-0 tw-font-semibold">MINASS Jude</h5>
+    </div>-->
+  </div>
+  <div class="inforight tw-flex tw-flex-row tw-items-center !tw-gap-2">
+    <div class="tw-flex tw-shadow-sm tw-px-2 tw-py-[2px] tw-rounded-md tw-border  tw-flex-col tw-w-[230px] ">
+      <div class="tw-font-semibold">{{ (userInfos | async)?.entreprise }}</div>
+      <div class="tw-text-muted-foreground">{{ (userInfos | async)?.groupe | titlecase }}</div>
+    </div>
+
+    <!--Logout-->
+    <button
+      (click)="logout()"
+      [tooltipOptions]="{placement: 'top', theme: 'faw-light', arrow: true}" [tooltip]="'Se deconnecter'"
+      appTippyDirective
+      cButton
+      class="!tw-max-h-8 hover:!tw-bg-white"
+      color="light"
+      size="sm"
+      variant="ghost"
+    >
+      <svg height="17" viewBox="0 0 512 512" width="17" xmlns="http://www.w3.org/2000/svg">
+        <path d="M160 240h160V96a16 16 0 0 0-16-16H64a16 16 0 0 0-16 16v320a16 16 0 0 0 16 16h240a16 16 0 0 0 16-16V272H160Zm299.31 4.69L368 153.37L345.37 176l64 64H320v32h89.37l-64 64L368 358.63l91.31-91.32a16 16 0 0 0 0-22.62"
+              fill="#545969"/>
+      </svg>
+    </button>
+  </div>
+</div>

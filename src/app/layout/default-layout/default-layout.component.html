@@ -1,0 +1,45 @@
+<!--sidebar-->
+<!--<c-sidebar-->
+<!--  #sidebar1="cSidebar"-->
+<!--  class="d-print-none sidebar sidebar-fixed border-end "-->
+<!--  colorScheme="light"-->
+<!--  id="sidebar1"-->
+<!--  visible-->
+<!--&gt;-->
+<!--  <c-sidebar-header class="border-bottom">-->
+<!--    <c-sidebar-brand [routerLink]="[]">-->
+<!--      <svg [class]="{icon: false}" cIcon class="sidebar-brand-full" height="32" name="logo" title="CoreUI Logo"></svg>-->
+<!--      <svg cIcon class="sidebar-brand-narrow" height="32" name="signet" title="CoreUI Logo"></svg>-->
+<!--    </c-sidebar-brand>-->
+<!--  </c-sidebar-header>-->
+
+<!--  <ng-scrollbar #scrollbar="ngScrollbar" (updated)="onScrollbarUpdate(scrollbar.state)" class="overflow" pointerEventsMethod="scrollbar" visibility="hover">-->
+<!--    <c-sidebar-nav #overflow [navItems]="navItems" dropdownMode="close" compact />-->
+<!--  </ng-scrollbar>-->
+<!--  @if (!sidebar1.narrow) {-->
+<!--    <c-sidebar-footer cSidebarToggle="sidebar1" class="border-top d-none d-lg-flex" toggle="unfoldable" style="cursor: pointer;">-->
+<!--      <button cSidebarToggler aria-label="Toggle sidebar fold"></button>-->
+<!--    </c-sidebar-footer>-->
+<!--  }-->
+<!--</c-sidebar>-->
+<link rel="stylesheet" href="default-footer/default-footer.component.scss">
+<div class="tw-flex tw-flex-row md:tw-flex tw-h-screen tw-overflow-hidden tw-bg-white">
+  
+  <!--main-->
+  <div
+    class="wrapper !tw-relative  tw-flex-1 tw-h-screen tw-overflow-y-auto !tw-bg-white   d-flex flex-column min-vh-100 !tw-ml-0 !tw-pl-0">
+    <!--app-header-->
+    <div class="tw-sticky tw-mb-4 tw-top-0 tw-left-0 tw-z-20 tw-h-16 tw-bg-white">
+      <app-custom-header/>
+    </div>
+    <!--app-body-->
+    <div class="body flex-grow-1 !tw-bg-white">
+      <c-container breakpoint="lg" class="h-auto px-4">
+        <router-outlet/>
+      </c-container>
+    </div>
+    <div class="!tw-bg-white" style="background-color: white !important;">
+      <app-default-footer/>
+    </div>
+  </div>
+</div>

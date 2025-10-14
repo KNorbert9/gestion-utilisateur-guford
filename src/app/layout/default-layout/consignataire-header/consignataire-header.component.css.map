@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "consignataire-header.component.scss"
+    ],
+    "names": [],
+    "file": "consignataire-header.component.css"
+}

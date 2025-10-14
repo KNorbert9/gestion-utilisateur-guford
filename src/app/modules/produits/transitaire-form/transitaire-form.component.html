@@ -1,0 +1,42 @@
+<!-- formulaires/transitaire-form/transitaire-form.component.html -->
+<div class="tw-border tw-rounded tw-p-4">
+  <h5 class="tw-font-semibold tw-mb-4">Demande - Transitaire</h5>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label>Raison sociale <span class="tw-text-red-600">*</span></label>
+        <input class="form-control" formControlName="raisonSociale" />
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <label>NIF <span class="tw-text-red-600">*</span></label>
+        <input class="form-control" formControlName="nif" />
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <label>RCCM</label>
+        <input class="form-control" formControlName="rccm" />
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label>Email</label>
+        <input class="form-control" formControlName="email" type="email" />
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label>Téléphone <span class="tw-text-red-600">*</span></label>
+        <input class="form-control" formControlName="telephone" />
+      </div>
+
+      <div class="col-12 mb-3">
+        <label>Adresse</label>
+        <input class="form-control" formControlName="adresse" />
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="submitting">
+      {{ submitting ? 'Envoi…' : 'Soumettre' }}
+    </button>
+  </form>
+</div>

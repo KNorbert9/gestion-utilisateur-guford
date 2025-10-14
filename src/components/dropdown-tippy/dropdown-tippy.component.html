@@ -1,0 +1,22 @@
+<ng-template #trigger>
+  <ng-content select="[trigger]"></ng-content>
+</ng-template>
+<ng-template #defaultMenu>
+  <div class="menu" role="menu" [attr.aria-label]="ariaLabel" (keydown)="handleKeydown($event)">
+    <ng-container *ngFor="let item of items">
+      <div *ngIf="item.divider" class="divider"></div>
+      <button *ngIf="!item.divider"
+              class="menu-item"
+              [class.disabled]="item.disabled"
+              [attr.aria-disabled]="item.disabled"
+              (click)="handleItemClick(item)"
+              (mouseenter)="handleItemHover($event, item)"
+              role="menuitem"
+              type="button">
+        <span *ngIf="item.icon" class="icon">{{ item.icon }}</span>
+        {{ item.label }}
+        <span *ngIf="item.children" class="submenu-indicator">▶</span>
+      </button>
+    </ng-container>
+  </div>
+</ng-template>

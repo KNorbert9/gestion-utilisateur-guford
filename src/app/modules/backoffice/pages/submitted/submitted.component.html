@@ -1,0 +1,445 @@
+
+<app-custom-data-table
+        [columns]="columns"
+        [customFilter]="mycustomFilter"
+        [data]="demands"
+        [loading]="loadingDemands"
+>
+    <ng-template #mycustomFilter>
+        <app-dropi-select
+                (selectedOption)="onOptionSelected($event)"
+                (valueChange)="onFilterChange($event)"
+                [icon]="ListChecks"
+                [options]="filterOptions"
+                [placeholder]="'Tous les statuts'"
+                [value]="selectedValue()"
+        />
+    </ng-template>
+
+    <!--  BEGIN: Column & Cell Index-->
+    <ng-template #indexHeader let-context>
+        <button
+                (click)="
+      context.column.toggleSorting(context.column.getIsSorted() === 'asc')
+    "
+                cButton
+                color="light"
+                variant="ghost"
+                size="sm"
+        >
+            <div class="tw-flex tw-flex-row tw-items-center tw-gap-x-1.5">
+                <span class="tw-font-semibold tw-text-secondary">N° ORDRE</span>
+            </div>
+        </button>
+    </ng-template>
+    <ng-template #indexCell let-context>
+        {{
+            context.row.getValue("index")
+        }}
+    </ng-template>
+    <!--  END: Column & Cell Index-->
+
+    <!--  Column & Cell Numero Demande-->
+    <ng-template #numeroHeader let-context>
+        <button
+                (click)="
+      context.column.toggleSorting(context.column.getIsSorted() === 'asc')
+    "
+                cButton
+                color="light"
+                variant="ghost"
+                size="sm"
+        >
+            <div class="tw-flex tw-items-center">
+                <span class="tw-font-semibold tw-text-secondary">N° DEMANDE</span>
+            </div>
+        </button>
+    </ng-template>
+    <ng-template #numeroCell let-context>
+        <!--        TODO: set link to veiw agreement detail-->
+        <a [routerLink]="['/importations/adt/demand/details', context.row.original.atp]"  (click)="xendDetailsInfo(context.row.original)"
+           class="tw-inline-flex tw-items-center tw-font-medium tw-text-blue-600 hover:tw-cursor-pointer hover:tw-underline">
+            {{ context.row.original.numeroDossier }}
+            <svg class="tw-w-5 tw-h-5 tw-ms-2 rtl:tw-rotate-180" xmlns="http://www.w3.org/2000/svg" width="18"
+                 height="18" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/>
+            </svg>
+        </a>
+
+
+    </ng-template>
+    <!--  END: Column & Cell numeroBL-->
+
+    <!--  Column & Cell numeroBL-->
+    <ng-template #numeroBLHeader let-context>
+        <button
+                (click)="
+      context.column.toggleSorting(context.column.getIsSorted() === 'asc')
+    "
+                cButton
+                color="light"
+                variant="ghost"
+                size="sm"
+        >
+            <div class="tw-flex tw-flex-row tw-items-center tw-gap-x-1.5">
+                <span class="tw-font-semibold tw-text-secondary">NUMÉRO BL</span>
+            </div>
+        </button>
+    </ng-template>
+    <ng-template #numeroBLCell let-context>
+        {{
+            context.row.getValue("numeroBL")
+        }}
+    </ng-template>
+    <!--  END: Column & Cell numeroBL-->
+
+
+    <!--  Column & Cell ATP-->
+    <!--    <ng-template #atpHeader let-context>-->
+    <!--        <button-->
+    <!--                (click)="-->
+    <!--      context.column.toggleSorting(context.column.getIsSorted() === 'asc')-->
+    <!--    "-->
+    <!--                cButton-->
+    <!--                color="light"-->
+    <!--                variant="ghost"-->
+    <!--                size="sm"-->
+    <!--        >-->
+    <!--            <div class="tw-flex tw-flex-row tw-items-center tw-gap-x-1.5">-->
+    <!--                <span class="tw-font-semibold tw-text-secondary">ATP</span>-->
+    <!--            </div>-->
+    <!--        </button>-->
+    <!--    </ng-template>-->
+    <!--    <ng-template #atpCell let-context>-->
+    <!--        {{-->
+    <!--            context.row.getValue("atp")-->
+    <!--        }}-->
+    <!--    </ng-template>-->
+    <!--  END: Column & Cell ATP-->
+
+    <!-- Column & Cell nomNavire -->
+    <ng-template #nomNavireHeader let-context>
+        <button
+                (click)="
+      context.column.toggleSorting(context.column.getIsSorted() === 'asc')
+    "
+                cButton
+                color="light"
+                variant="ghost"
+                size="sm"
+        >
+            <div class="tw-flex tw-flex-row tw-items-center tw-gap-x-1.5">
+                <span class="tw-font-semibold tw-text-secondary">NOM NAVIRE</span>
+            </div>
+        </button>
+    </ng-template>
+    <ng-template #nomNavireCell let-context>
+        {{
+            context.row.getValue("nomNavire")
+        }}
+    </ng-template>
+
+    <!-- END: Column & Cell nomNavire-->
+
+
+
+    <!--  BEGIN: Column & Cell Etat-->
+    <ng-template #statusHeader let-context>
+        <button
+                (click)="
+   context.column.toggleSorting(context.column.getIsSorted() === 'asc')
+ "
+                [ngClass]="{
+       'text-primary': context.column.getIsSorted() === 'asc',
+       'text-muted': context.column.getIsSorted() !== 'asc'
+     }"
+                cButton
+                color="light"
+                size="sm"
+                variant="ghost"
+        >
+            <div class="tw-flex tw-flex-row tw-items-center tw-gap-x-1.5">
+                <span class="tw-font-semibold tw-text-secondary">STATUT</span>
+                @if (context.column.getIsSorted() === 'asc') {
+                    <span><lucide-icon [img]="ArrowUp" size="14"></lucide-icon></span>
+                } @else if (context.column.getIsSorted() === 'desc') {
+                    <span><lucide-icon [img]="ArrowDown" size="14"></lucide-icon></span>
+                }
+            </div>
+        </button>
+    </ng-template>
+
+
+
+
+    <ng-template #statusCell let-context>
+        <app-status-demand
+                [content]="snakeCaseToTitleCase(context.row.getValue('status'))"
+                [haveIcon]="true"
+                [status]="context.row.getValue('status')"
+        />
+    </ng-template>
+    <!--  END: Column & Cell Etat-->
+
+    <ng-template #dateDmdHeader let-context>
+        <div class="tw-flex tw-flex-row tw-items-center tw-gap-x-1.5">
+            <span class="tw-font-semibold tw-text-secondary">DATE TRAITEMENT</span>
+        </div>
+    </ng-template>
+    <ng-template #dateDmdCell let-context>
+        {{ context.row.getValue("dateDmd") | date: 'dd/MM/yyyy: HH:mm' }}
+    </ng-template>
+    <!--  END: Column & Cell Date Demande-->
+    <!--  Column & Cell Action-->
+    <ng-template #actionHeader let-context>
+        <div class="tw-flex tw-flex-row tw-items-center tw-gap-x-1.5">
+            <span class="tw-font-semibold tw-text-secondary">ACTION</span>
+        </div>
+    </ng-template>
+
+
+    <ng-template #actionCell let-context>
+        <c-dropdown [popperOptions]="getPopperConfig()">
+            <button
+                    [caret]="false" cButton
+                    cDropdownToggle
+                    class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+                    color="light"
+            >
+                <span>Actions</span>
+                <svg class="tw-h-4 tw-w-4 tw-text-gray-500" height="32" viewBox="0 0 24 24" width="32"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="m7 15l5 5l5-5M7 9l5-5l5 5" fill="none" stroke="currentColor" stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"/>
+                </svg>
+            </button>
+
+
+<!--            <ul cDropdownMenu class="!tw-mt-1 tw-z-20">-->
+<!--                @if (context.row.getValue("status") === 'SOUMIS') {-->
+<!--                    <li><a-->
+<!--                            (click)="xendDetailsInfo(context.row.original)"-->
+<!--                            [routerLink]="['/importations/adt/demand/validate']"-->
+<!--                            cDropdownItem class="tw-cursor-pointer">-->
+<!--                        <div class="tw-flex tw-flex-row tw-items-center tw-gap-2 tw-justify-start">-->
+<!--                            <div>Valider la demande</div>-->
+<!--                        </div>-->
+<!--                    </a></li>-->
+<!--&lt;!&ndash;                    <li><a&ndash;&gt;-->
+<!--&lt;!&ndash;                            (click)="okReject(context.row.original)"&ndash;&gt;-->
+<!--&lt;!&ndash;                            cDropdownItem class="tw-cursor-pointer">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="tw-flex tw-flex-row tw-items-center tw-gap-2 tw-justify-start">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <div>Rejeter  pour complément</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </a></li>&ndash;&gt;-->
+<!--                }-->
+
+<!--                @if (userProfile && context.row.getValue("status") === 'ACCEPTER' && (userProfile.role === 'COMPTABLE') && context.row.getValue("statutPaiement") === 'IMPAYER') {-->
+<!--                    <li><a-->
+<!--                            (click)="payerDemand(context.row.original)"-->
+<!--                            cDropdownItem class="tw-cursor-pointer">-->
+<!--                        <div class="tw-flex tw-flex-row tw-items-center tw-gap-2 tw-justify-start">-->
+<!--                            <div>Encaisser la redevance</div>-->
+<!--                        </div>-->
+<!--                    </a></li>-->
+<!--                }-->
+
+<!--                @if (userProfile && context.row.getValue("status") === 'ACCEPTER' && (userProfile.role === 'COMPTABLE' || userProfile.role === 'INSPECTEUR') && context.row.getValue("statutPaiement") === 'PAYER') {-->
+<!--                    <li><a-->
+<!--                            (click)="okTraiterDemande(context.row.original)"-->
+<!--                            cDropdownItem class="tw-cursor-pointer">-->
+<!--                        <div class="tw-flex tw-flex-row tw-items-center tw-gap-2 tw-justify-start">-->
+<!--                            <div>Traiter la demande</div>-->
+<!--                        </div>-->
+<!--                    </a></li>-->
+<!--                }-->
+
+<!--                @if (userProfile && context.row.getValue("status") === 'TRAITER' && userProfile.role === 'INSPECTEUR') {-->
+<!--                    @if (context.row.original.hasDocument === false) {-->
+
+
+<!--                        <li><a-->
+<!--                                (click)="generateAutorisationPdf(context.row.original)"-->
+<!--                                cDropdownItem class="tw-cursor-pointer">-->
+<!--                            <div class="tw-flex tw-flex-row tw-items-center tw-gap-2 tw-justify-start">-->
+<!--                                <div>Générer le document</div>-->
+<!--                            </div>-->
+<!--                        </a></li>-->
+<!--                    } @else{-->
+<!--                        <li><a-->
+<!--                                (click)="visualizepdf(context.row.original)"-->
+<!--                                cDropdownItem class="tw-cursor-pointer">-->
+<!--                            <div class="tw-flex tw-flex-row tw-items-center tw-gap-2 tw-justify-start">-->
+<!--                                <div>Visualiser le document</div>-->
+<!--                            </div>-->
+<!--                        </a></li>-->
+<!--                        @if (context.row.original.accorder === 0) {-->
+<!--                            <li><a-->
+<!--                                    (click)="openSignModal(context.row.original)"-->
+<!--                                    cDropdownItem class="tw-cursor-pointer">-->
+<!--                                <div class="tw-flex tw-flex-row tw-items-center tw-gap-2 tw-justify-start">-->
+<!--                                    <div>Signer le document</div>-->
+<!--                                </div>-->
+<!--                            </a></li>-->
+<!--                        }-->
+<!--                    }-->
+
+<!--                }-->
+
+<!--                <li><a-->
+<!--                        [routerLink]="['/importations/adt/demand/details', context.row.original.idFormalite]"  (click)="xendDetailsInfo(context.row.original)"-->
+<!--                        cDropdownItem class="tw-cursor-pointer">-->
+<!--                    <div class="tw-flex tw-flex-row tw-items-center tw-gap-2 tw-justify-start">-->
+<!--                        <div>Détails</div>-->
+<!--                    </div>-->
+<!--                </a></li>-->
+<!--            </ul>-->
+        </c-dropdown>
+    </ng-template>
+
+</app-custom-data-table>
+
+<!--<app-show-one-file-->
+<!--        (onClose)="onCloseBonChargementModal()"-->
+<!--        (onConfirm)="onConfirmBonChargementModal()"-->
+<!--        [haveConfirmButton]="haveConfirmButton"-->
+<!--        [openModal]="openBonChargementModal"-->
+<!--        [titleModal]="'AUTORISATION D\'IMPORTATION'"-->
+<!--        [src]="url"-->
+<!--/>-->
+
+<!--<app-confirm-modal-->
+<!--        (onCancel)="onCancel()"-->
+<!--        (onConfirm)="onProcess()"-->
+<!--        [isLoading]="loadingSubmit"-->
+<!--        [visible]="modalTraiterVisible"-->
+<!--        [ShowInput]="true"-->
+<!--        [title]="'Traiter la demande'"-->
+<!--        message="Cliquer sur le bouton 'Traiter' pour traiter la demande!"-->
+<!--/>-->
+
+<!--<app-general-modal-->
+<!--        [visible]="modalRejectVisible"-->
+<!--        [isLoading]="loadingReject"-->
+<!--        [disabled]="rejectDemandForm.invalid"-->
+<!--        (onCancel)="onCancelReject()"-->
+<!--        confirmButton="Confirmer le rejet"-->
+<!--        (onConfirm)="rejectDemand()"-->
+<!--        [danger]="true"-->
+<!--        titleMdl="Rejeter la demande pour complément"-->
+<!--&gt;-->
+<!--    <form-->
+<!--            class="row"-->
+<!--            [formGroup]="rejectDemandForm"-->
+<!--            cForm>-->
+<!--        <div class="mb-3 col-md-12">-->
+<!--            <label cLabel for="motif">Motif de rejet</label>-->
+<!--            <textarea formControlName="motif" cFormControl id="motif" rows="3"></textarea>-->
+<!--        </div>-->
+<!--    </form>-->
+<!--</app-general-modal>-->
+
+<!--<app-general-modal-->
+<!--        titleMdl="Encaisser la redevance"-->
+<!--        [confirmButton]="'Confirmer pour encaisser'"-->
+<!--        [cancelButton]="'Annuler'"-->
+<!--        [isLoading]="loadingSubmit"-->
+<!--        [isConfirm]="true"-->
+<!--        [visible]="modalVisiblePayer"-->
+<!--        (onConfirm)="confirmPayerDemand(demand)"-->
+<!--        (onCancel)="onCancel()"-->
+<!--&gt;-->
+<!--    @if (demand) {-->
+<!--        <div>-->
+<!--            <div class="tw-text-sm tw-font-semibold tw-mb-2 tw-text-gray-600">-->
+<!--                N° demande {{ demand.numeroDossier }}-->
+<!--            </div>-->
+<!--            <div class="tw-text-sm tw-font-semibold tw-mb-4 tw-text-gray-600">-->
+<!--                (Demande d'autorisation de dépotage et de transit)-->
+<!--            </div>-->
+<!--            <div class="tw-text-sm tw-mt-1 tw-font-semibold tw-text-gray-600">-->
+<!--                Montant de la redevance à payer-->
+<!--            </div>-->
+<!--            <div class="tw-text-lg tw-font-bold tw-mt-2">-->
+<!--        <span-->
+<!--                class="tw-bg-green-100 tw-text-green-800 tw-font-semibold tw-me-2 tw-px-2.5 tw-py-0.5 tw-rounded-sm"-->
+<!--        >-->
+<!--          {{ demand.montantRedevance | price }}-->
+<!--        </span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    }-->
+<!--</app-general-modal>-->
+
+<!--&lt;!&ndash;<app-confirm-modal&ndash;&gt;-->
+<!--&lt;!&ndash;        [visible]="showNumeroModal && !enteringNumero"&ndash;&gt;-->
+<!--&lt;!&ndash;        [title]="'Génération de l\'autorisation'"&ndash;&gt;-->
+<!--&lt;!&ndash;        [message]="'Souhaitez-vous entrer un numéro d\'autorisation manuellement ?'"&ndash;&gt;-->
+<!--&lt;!&ndash;        [confirmButton]="'Oui'"&ndash;&gt;-->
+<!--&lt;!&ndash;        [cancelButton]="'Non'"&ndash;&gt;-->
+<!--&lt;!&ndash;        (onConfirm)="onNumeroDecision(true)"&ndash;&gt;-->
+<!--&lt;!&ndash;        (onCancel)="onNumeroDecision(false)"&ndash;&gt;-->
+<!--&lt;!&ndash;&gt;</app-confirm-modal>&ndash;&gt;-->
+
+<!--<app-show-one-file-->
+<!--        (onClose)="onCloseBonChargementModal()"-->
+<!--        (onConfirm)="onConfirmBonChargementModal()"-->
+<!--        [haveConfirmButton]="haveConfirmButton"-->
+<!--        [openModal]="openBonChargementModal"-->
+<!--        [titleModal]="'AUTORISATION DE DÉPOTAGE ET TRANSIT'"-->
+<!--        [src]="url"-->
+<!--/>-->
+
+<!--<app-show-one-file-->
+<!--        (onClose)="onCloseBonChargementModal()"-->
+<!--        (onConfirm)="onConfirmBonChargementModal()"-->
+<!--        [haveConfirmButton]="haveConfirmButton"-->
+<!--        [openModal]="openSignDocModal"-->
+<!--        [titleModal]="'AUTORISATION DE DÉPOTAGE ET TRANSIT'"-->
+<!--        [src]="url"-->
+<!--/>-->
+
+<!--&lt;!&ndash; Formulaire de saisie du numéro &ndash;&gt;-->
+<!--&lt;!&ndash;<div *ngIf="enteringNumero && showNumeroModal" class="tw-p-4 tw-bg-white tw-shadow-lg tw-rounded tw-w-full tw-max-w-md tw-mx-auto">&ndash;&gt;-->
+<!--&lt;!&ndash;    <label for="numero" class="tw-block tw-font-medium tw-mb-2">Numéro d'autorisation</label>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input&ndash;&gt;-->
+<!--&lt;!&ndash;            id="numero"&ndash;&gt;-->
+<!--&lt;!&ndash;            [(ngModel)]="numeroAutorisation"&ndash;&gt;-->
+<!--&lt;!&ndash;            type="text"&ndash;&gt;-->
+<!--&lt;!&ndash;            class="tw-w-full tw-border tw-rounded tw-p-2 tw-mb-3"&ndash;&gt;-->
+<!--&lt;!&ndash;            placeholder="Ex: HGT/MA/DE/001"&ndash;&gt;-->
+<!--&lt;!&ndash;    />&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="tw-flex tw-justify-end tw-gap-2">&ndash;&gt;-->
+<!--&lt;!&ndash;        <button cButton color="light" (click)="resetAutorisationModal()">Annuler</button>&ndash;&gt;-->
+<!--&lt;!&ndash;        <button cButton color="primary" (click)="generatePdf()">Valider</button>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--<app-show-one-file-->
+<!--        (onClose)="onCloseBonChargementModal()"-->
+<!--        (onConfirm)="onConfirmBonChargementModal()"-->
+<!--        [haveConfirmButton]="haveConfirmButton"-->
+<!--        [openModal]="openRecuModal"-->
+<!--        [titleModal]="'RECU DE PAIEMENT'"-->
+<!--        [src]="url"-->
+<!--/>-->
+
+<!--<app-general-modal-->
+<!--        [visible]="modalSignatureVisible"-->
+<!--        [isLoading]="loadingDemands"-->
+<!--        (onCancel)="modalSignatureVisible = false"-->
+<!--        (onConfirm)="signePdf()"-->
+<!--        [disabled] = "!selectedSignataire"-->
+<!--        [isConfirm]="true"-->
+<!--        titleMdl="Sélectionnez un signataire"-->
+<!--&gt;-->
+<!--    <ng-container *ngIf="signatureList() as list">-->
+<!--        <select class="tw-w-full tw-border tw-rounded-md tw-p-2" [(ngModel)]="selectedSignataire">-->
+<!--            <option *ngFor="let sig of list" [ngValue]="sig">-->
+<!--                {{ sig.fonction }} - {{ sig.nomInspecteur }} {{ sig.prenomsInspecteur }}-->
+<!--            </option>-->
+<!--        </select>-->
+<!--    </ng-container>-->
+<!--</app-general-modal>-->

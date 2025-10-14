@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  fret-front:
+    build:
+      context: .
+      dockerfile: deployements/Dockerfile
+    restart: always
+    ports:
+      - "5096:80"

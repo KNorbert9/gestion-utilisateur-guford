@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  formulaire-guford:
+    build:
+      context: .
+      dockerfile: deployements/Dockerfile
+    restart: always
+    ports:
+      - "5198:80"

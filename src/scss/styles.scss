@@ -1,0 +1,191 @@
+/* You can add global styles to this file, and also import other style files */
+@use "tippy.js/dist/tippy.css";
+@use 'tippy.js/dist/border.css';
+
+@use "tailwindcss/base";
+@use "tailwindcss/components";
+@use "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --faw-raw--white: #ffffff;
+    --faw-raw--secondary: #414552;
+    --faw-raw--fg-secondary: #697386;
+    --faw-raw--fg-secondary02: #bebdbd;
+    --faw-raw--secondary-light: #f1f1f1;
+    --faw-raw--border-secondary: #e0e6eb;
+    --faw-raw--primary: #18a148;
+    --faw-raw--metal: #565584;
+    --faw-raw--tahiti: #3ab7bf;
+    --faw-raw--silver: #ecebff;
+    --faw-raw--bubble-gum: #ff77e9;
+    --faw-raw--bermuda: #78dcca;
+    --faw-raw-fg-accent-green: #006908;
+    --faw-raw-bg-accent-light-green: #dbf9c9;
+    --faw-raw-fg-accent-red: #B3093C;
+    --faw-raw-bg-accent-light-red: #FFE7F2;
+    --faw-raw-fg-accent-yellow: #983705;
+    --faw-raw-bg-accent-light-yellow: #F6E6B9;
+    --faw-raw-fg-accent-blue: #0055BC;
+    --faw-raw-bg-accent-light-blue: #CFF5F6;
+    --faw-focus-input-color: #e0f6d3;
+    --faw-focus-light-input-color: #f1f9ec;
+    --faw-focus-input-border-color: #0b7e33;
+
+    // Tailwind colors
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 76.2% 36.3%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.4 71.8% 29.2%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+$faw-white: var(--faw-raw--white);
+$faw-secondary: var(--faw-raw--secondary);
+$faw-fg-secondary: var(--faw-raw--fg-secondary);
+$faw-secondary-light: var(--faw-raw--secondary-light);
+$faw-border-secondary: var(--faw-raw--border-secondary);
+$faw-primary: hsl(var(--primary));
+$faw-metal: var(--faw-raw--metal);
+$faw-tahiti: var(--faw-raw--tahiti);
+$faw-silver: var(--faw-raw--silver);
+$faw-bubble-gum: var(--faw-raw--bubble-gum);
+$faw-bermuda: var(--faw-raw--bermuda);
+$faw-fg-accent-green: var(--faw-raw-fg-accent-green);
+$faw-bg-accent-light-green: var(--faw-raw-bg-accent-light-green);
+$faw-fg-accent-red: var(--faw-raw-fg-accent-red);
+$faw-bg-accent-light-red: var(--faw-raw-bg-accent-light-red);
+$faw-fg-accent-yellow: var(--faw-raw-fg-accent-yellow);
+$faw-bg-accent-light-yellow: var(--faw-raw-bg-accent-light-yellow);
+$faw-fg-accent-blue: var(--faw-raw-fg-accent-blue);
+$faw-bg-accent-light-blue: var(--faw-raw-bg-accent-light-blue);
+$faw-focus-input-color: var(--faw-focus-input-color);
+$faw-focus-input-border-color: var(--faw-focus-input-border-color);
+$faw-focus-light-input-color: var(--faw-focus-light-input-color);
+
+@import "mixin";
+
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles with default layout.
+@import "@coreui/coreui/scss/coreui";
+
+// Import Chart.js custom tooltips styles
+@import "@coreui/chartjs/scss/coreui-chartjs";
+
+// Custom styles for this theme
+@import "theme";
+
+
+@import "@ng-select/ng-select/themes/default.theme.css";
+
+@import "tippy";
+// Some temp fixes
+//@import "fixes";
+
+// If you want to add custom CSS you can put it here.
+@import "custom";
+
+// Examples
+// We use those styles to show code examples, you should remove them in your application.
+@import "examples";
+
+html,
+body {
+  height: 100%;
+}
+
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url("inter/Inter-roman.var.woff2?v=3.18") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: 'Italic';
+  src: url("inter/Inter-italic.var.woff2?v=3.18") format("woff2");
+}
+
+// button {
+//   border-radius: 0 !important;
+// }
+
+
+
+@layer base {
+  //* {
+  //  @apply border-border;
+  //}
+  //body {
+  //  @apply bg-background text-foreground;
+  //  font-feature-settings: "rlig" 1, "calt" 1;
+  //}
+
+  * {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11" on !important;
+    -webkit-font-feature-settings: "cv02", "cv03", "cv04", "cv11" on !important;
+    -moz-font-feature-settings: "cv02", "cv03", "cv04", "cv11" on !important;
+  }
+
+  html,
+  body {
+    font-family: "Inter var", system-ui, sans-serif !important;
+    letter-spacing: -0.08px;
+  }
+}
