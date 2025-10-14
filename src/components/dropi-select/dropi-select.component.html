@@ -1,0 +1,30 @@
+<div>
+    <c-dropdown>
+        <button
+                cButton
+                cDropdownToggle
+                [caret]="false"
+                class="!tw-w-[220px] !tw-flex !tw-justify-between !tw-px-3 !tw-py-2 !tw-items-center !tw-bg-white !tw-shadow-sm !tw-border !tw-border-neutral-300 !tw-text-neutral-500 !tw-rounded-md"
+        >
+            <div class="tw-flex tw-items-center tw-gap-2">
+                <lucide-icon [img]="icon" class="tw-size-4" *ngIf="icon"></lucide-icon>
+                <span>{{selectedLabel || placeholder}}</span>
+            </div>
+            <lucide-icon [img]="ChevronDown" class="tw-size-4 tw-text-neutral-500"></lucide-icon>
+        </button>
+
+
+        <div class="!tw-mt-1 !tw-w-[220px] !tw-bg-white !tw-rounded-md !tw-shadow-lg !tw-border !tw-border-neutral-200" cDropdownMenu>
+            <button
+                    *ngFor="let option of options; trackBy: trackByValue"
+                    cDropdownItem
+                    (click)="onSelect(option)"
+                    class="!tw-w-full !tw-px-4 !tw-py-2 !tw-text-left hover:!tw-bg-neutral-100"
+                    [class.active]="option.value === value"
+            >
+                {{option.label}}
+            </button>
+        </div>
+    </c-dropdown>
+</div>
+

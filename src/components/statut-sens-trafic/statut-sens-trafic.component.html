@@ -1,0 +1,46 @@
+@if (typeStatut === "SENS TRAFFIC") {
+  <div>
+    @if (sensTrafic === sensTraficEnum.IMPORT) {
+      <span
+        class="tw-py-1 tw-text-nowrap tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium  tw-bg-blue-100 tw-text-blue-700 tw-rounded-full"
+      >
+      {{ "A L'IMPORT" }}
+    </span>
+    } @else if (sensTrafic === sensTraficEnum.EXPORT) {
+      <span
+        class="tw-py-1 tw-text-nowrap tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium  tw-bg-lime-100 tw-text-lime-700 tw-rounded-full"
+      >
+      {{ "A L'EXPORT" }}
+    </span>
+    } @else {
+      <span
+        class="tw-py-1 tw-text-nowrap tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium  tw-bg-lime-100 tw-text-lime-700 tw-rounded-full"
+      >
+      {{ "A L'EXPORT" }}
+    </span>
+    }
+  </div>
+}
+@if (typeStatut === "ETAT MARCHANDISE") {
+  <div>
+    @if (sensTrafic === etatMarchandiseEnum.LOCAL) {
+      <span
+        class="tw-py-1 tw-text-nowrap tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium  tw-bg-blue-100 tw-text-blue-700 tw-rounded-full"
+      >
+      {{ "EN TRANSIT" }}
+    </span>
+    } @else if (sensTrafic === etatMarchandiseEnum.TRANSIT) {
+      <span
+        class="tw-py-1 tw-text-nowrap tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium  tw-bg-lime-100 tw-text-lime-700 tw-rounded-full"
+      >
+      {{ "EN LOCAL" }}
+    </span>
+    } @else {
+      <span
+        class="tw-py-1 tw-text-nowrap tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium  tw-bg-lime-100 tw-text-lime-700 tw-rounded-full"
+      >
+      {{ "EN LOCAL" }}
+    </span>
+    }
+  </div>
+}

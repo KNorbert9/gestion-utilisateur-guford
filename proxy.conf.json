@@ -1,0 +1,26 @@
+{
+  "/api-fret": {
+    "target": "http://102.164.230.196:9001",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api-fret": ""
+    }
+  },
+  "/file-other": {
+    "target": "http://102.164.230.196:4300",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/file-other": ""
+    }
+  },
+  "/file-minio": {
+    "target": "https://minio-api.guford.com",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/file-minio": ""
+    }
+  }
+}

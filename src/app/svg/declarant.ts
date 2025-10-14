@@ -1,0 +1,6 @@
+// @ts-nocheck
+/* eslint-disable */
+export const dfretDeclarantIcon = {
+    data: `<svg id="Single-Neutral-Actions-Text--Streamline-Ultimate.svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><desc>Single Neutral Actions Text Streamline Icon: https://streamlinehq.com</desc><defs/><title>single-neutral-actions-text</title><path d="M3.375 4.875a4.125 4.125 0 1 0 8.25 0 4.125 4.125 0 1 0 -8.25 0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M8.25 10.558a6.409 6.409 0 0 0 -0.75 -0.058 6.75 6.75 0 0 0 -6.75 6.75" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M12.75 11.25h9s1.5 0 1.5 1.5v9s0 1.5 -1.5 1.5h-9s-1.5 0 -1.5 -1.5v-9s0 -1.5 1.5 -1.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="m14.25 14.25 6 0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="m14.25 17.25 6 0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="m14.25 20.25 2.25 0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>`,
+    name: 'declarant' as const
+};

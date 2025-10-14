@@ -1,0 +1,22 @@
+<div>
+  @if (statutAffretement === StatutAffretementEnum.AFFRETE) {
+    <span
+      class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-text-nowrap tw-flex-nowrap tw-gap-x-1 tw-font-medium  tw-bg-emerald-100 tw-text-emerald-700 tw-rounded-full"
+    >
+      {{ statutAffretement }}
+    </span>
+  } @else if (statutAffretement === StatutAffretementEnum.NON_AFFRETE) {
+    <span
+      class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-text-nowrap tw-flex-nowrap tw-gap-x-1 tw-font-medium  tw-bg-gray-100 tw-text-gray-600 tw-rounded-full"
+    >
+
+      {{ statutAffretement }}
+    </span>
+  } @else {
+    <span
+      class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-text-nowrap tw-flex-nowrap tw-gap-x-1 tw-font-medium  tw-bg-gray-100 tw-text-gray-600 tw-rounded-full"
+    >
+      {{ StatutAffretementEnum.NON_AFFRETE }}
+    </span>
+  }
+</div>

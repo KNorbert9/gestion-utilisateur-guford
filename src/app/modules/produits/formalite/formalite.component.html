@@ -1,0 +1,43 @@
+<div class="title tw-flex tw-flex-row tw-items-center tw-justify-between">
+    <div class="tw-flex tw-justify-between tw-flex-row tw-items-center tw-gap-2">
+        <div class="tw-text-[1.1rem] md:tw-text-[1.2rem] tw-font-bold">
+            <span class="tw-text-primary tw-mb-0 tw-text-sm tw-font-medium tw-tracking-wider">Demande d'habillitation - GUFORD
+                d’obtention des permis, licences, certificats,
+                autorisations et autres documents.</span>
+            <br />
+            <span>Formulaire {{ name }}</span>
+        </div>
+    </div>
+    <div>
+        <a [routerLink]="'/'" routerLinkActive="router-link-active"><button cButton color="dark">Retour</button></a>
+    </div>
+</div>
+
+
+<div class="py-4" *ngIf="fichiers.length != 0">
+    <h6 class="mt-4 mb-3">Liste des pieces justificatives</h6>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let item of fichiers">
+            <div class="card p-4 my-3 text-center height">
+                <h6>
+                    {{ item.libelle }}</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="my-4">
+    <h6>Formulaires</h6>
+    <form [formGroup]="form" class="row mb-4">
+        <div class="col-md-4 my-2" *ngFor="let key of objectKeys(schema)">
+            <label [for]="key" class="form-label">{{ schema[key].label || key }}</label>
+            <input type="text" [formControlName]="key" [id]="key" class="form-control" readonly />
+        </div>
+        <div class="col-md-12 my-4 d-flex justify-content-end">
+            <a href="https://www.segucetogo.tg/" target="_blank" class="btn btn-primary text-white">
+                Faire ma demande
+            </a>
+        </div>
+    </form>
+
+</div>

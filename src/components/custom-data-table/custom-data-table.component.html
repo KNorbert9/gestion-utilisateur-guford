@@ -1,0 +1,206 @@
+<div class="tw-bg-white tw-sticky tw-top-16 tw-z-10 tw-mb-4">
+
+
+    <div
+            class="tw-pr-2  tw-flex tw-flex-row tw-justify-between tw-mb-2 tw-mt-5 tw-items-center"
+    >
+        <div class="tw-flex tw-flex-row tw-items-center tw-gap-3">
+            <select class="tw-max-w-[6rem]" id="pageSize" (change)="changePageSize($event)" aria-label="Default select example" cSelect>
+                <option disabled >page...</option>
+                <option [value]="1">1</option>
+                <option [value]="5" selected>5</option>
+                <option [value]="10">10</option>
+                <option [value]="15">15</option>
+                <option [value]="25">25</option>
+                <option [value]="40">40</option>
+            </select>
+            <input
+                    placeholder="Recherche ..."
+                    class="tw-max-w-48"
+                    cFormControl
+                    id="inputEmail-1"
+                    [type]="'text'"
+                    (input)="onChangeFilter($event)"
+            />
+            <ng-container *ngTemplateOutlet="customFilter()!">
+                <!--Custom filter here -->
+            </ng-container>
+        </div>
+        <!-- Pagination and more -->
+        <div class="tw-flex tw-justify-between tw-items-center tw-mt-4">
+            <div class="tw-flex tw-justify-between tw-items-center tw-gap-x-4">
+                <div>
+                    Page {{ table.getState().pagination.pageIndex + 1 }} sur
+                    {{ table.getPageCount() }}
+                </div>
+                <div class="tw-flex tw-justify-end tw-items-center tw-gap-x-1">
+                    <button
+                            (click)="table.setPageIndex(0)"
+                            [disabled]="!table.getCanPreviousPage()"
+                            cButton
+                            color="light"
+                            size="sm"
+                            class="tw-p-0 tw-h-8 tw-w-8"
+                    >
+                        <lucide-icon [img]="ChevronFirst" size="14"></lucide-icon>
+                    </button>
+                    <button
+                            (click)="table.previousPage()"
+                            [disabled]="!table.getCanPreviousPage()"
+                            cButton
+                            color="light"
+                            size="sm"
+                            class="tw-p-0 tw-h-8 tw-w-8"
+                    >
+                        <lucide-icon [img]="ChevronLeft" size="14"></lucide-icon>
+                    </button>
+                    <button
+                            (click)="table.nextPage()"
+                            [disabled]="!table.getCanNextPage()"
+                            cButton
+                            color="light"
+                            size="sm"
+                            class="tw-p-0 tw-h-8 tw-w-8"
+                    >
+                        <lucide-icon [img]="ChevronRight" size="14"></lucide-icon>
+                    </button>
+                    <button
+                            (click)="table.setPageIndex(table.getPageCount() - 1)"
+                            [disabled]="!table.getCanNextPage()"
+                            cButton
+                            color="light"
+                            size="sm"
+                            class="tw-p-0 tw-h-8 tw-w-8"
+                    >
+                        <lucide-icon [img]="ChevronLast" size="14"></lucide-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <table [responsive]="true" bordered cTable>
+        <thead>
+            @for (headerGroup of table.getHeaderGroups(); track $index;) {
+                <tr>
+                    @for (header of headerGroup.headers; track header.id;) {
+                        <th scope="col" class="tw-px-4 tw-py-2 !tw-bg-gray-100 !tw-text-nowrap !tw-flex-shrink-0">
+                            <ng-container
+                                    *flexRender="
+                 header.column.columnDef.header;
+                 props: header.getContext();
+                 let context = props
+               "
+                            >
+                            </ng-container>
+                        </th>
+
+
+                    }
+                </tr>
+            }
+            @if (loadingData) {
+                <tr>
+                    <td [attr.colspan]="columns.length"  class="tw-text-center !tw-my-0 !tw-p-0">
+                        <app-loading-bar></app-loading-bar>
+                    </td>
+                </tr>
+            }
+        </thead>
+
+
+        <tbody>
+
+
+            @if(!loadingData) {
+                @for (row of table.getRowModel().rows; track $index+1 ;) {
+                    <tr>
+                        @for (cell of row.getVisibleCells(); track $index;) {
+                            <td class="tw-px-4 tw-py-2">
+                                <ng-container
+                                        *flexRender="
+                 cell.column.columnDef.cell;
+                 props: cell.getContext();
+                 let cell = props
+               "
+                                >
+                                </ng-container>
+                            </td>
+                        }
+                        <!-- <th scope="row">{{ $index }}</th>
+                        <td>{{ user.fulname }}</td>
+                        <td>{{ user.roles[0].code }}</td> -->
+                    </tr>
+                }
+                @if (table.getRowCount() === 0 && !loadingData) {
+                    <tr>
+                        <td [attr.colspan]="columns.length"  class="tw-text-center">Aucun résultat</td>
+                    </tr>
+                }
+            }
+            @if (loadingData) {
+                <tr>
+                    <td [attr.colspan]="columns.length" class="tw-text-center !tw-text-gray-400">En cours de chargement...</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <!-- Pagination and more -->
+    @if(dataIn().length > 0) {
+        <div class="tw-flex tw-justify-between tw-items-center tw-mt-4">
+            <div>{{ getCurrentDisplayRange().end }} élément(s) sur {{ table.getRowCount() }}</div>
+            <div class="tw-flex tw-justify-between tw-items-center tw-gap-x-4">
+                <div>
+                    Page {{ table.getState().pagination.pageIndex + 1 }} sur
+                    {{ table.getPageCount() }}
+                </div>
+                <div class="tw-flex tw-justify-end tw-items-center tw-gap-x-1">
+                    <button
+                            (click)="table.setPageIndex(0)"
+                            [disabled]="!table.getCanPreviousPage()"
+                            cButton
+                            color="light"
+                            size="sm"
+                            class="tw-p-0 tw-h-8 tw-w-8"
+                    >
+                        <lucide-icon [img]="ChevronFirst" size="14"></lucide-icon>
+                    </button>
+                    <button
+                            (click)="table.previousPage()"
+                            [disabled]="!table.getCanPreviousPage()"
+                            cButton
+                            color="light"
+                            size="sm"
+                            class="tw-p-0 tw-h-8 tw-w-8"
+                    >
+                        <lucide-icon [img]="ChevronLeft" size="14"></lucide-icon>
+                    </button>
+                    <button
+                            (click)="table.nextPage()"
+                            [disabled]="!table.getCanNextPage()"
+                            cButton
+                            color="light"
+                            size="sm"
+                            class="tw-p-0 tw-h-8 tw-w-8"
+                    >
+                        <lucide-icon [img]="ChevronRight" size="14"></lucide-icon>
+                    </button>
+                    <button
+                            (click)="table.setPageIndex(table.getPageCount() - 1)"
+                            [disabled]="!table.getCanNextPage()"
+                            cButton
+                            color="light"
+                            size="sm"
+                            class="tw-p-0 tw-h-8 tw-w-8"
+                    >
+                        <lucide-icon [img]="ChevronLast" size="14"></lucide-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

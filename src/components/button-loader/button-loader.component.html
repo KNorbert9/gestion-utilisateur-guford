@@ -1,0 +1,23 @@
+@if(type === "primary") {
+  <button disabled="{{isLoading || disabled}}" (click)="onConfirmClick()" [clsx]="getClass('!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary')" cButton color="primary">
+    @if(isLoading){
+      <c-spinner class="!tw-mr-1" aria-hidden="true" size="sm"></c-spinner>
+    }
+      <ng-container *ngTemplateOutlet="projected" />
+  </button>
+}
+@if(type === "secondary") {
+  <button disabled="{{isLoading || disabled}}" (click)="onConfirmClick()"
+
+          [clsx]="getClass('!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary')" cButton color="light">
+    @if(isLoading){
+      <c-spinner class="!tw-mr-1" aria-hidden="true" size="sm"></c-spinner>
+    }
+      <ng-container *ngTemplateOutlet="projected" />
+  </button>
+}
+
+
+<ng-template #projected>
+  <ng-content/>
+</ng-template>

@@ -1,0 +1,174 @@
+@if (status == StatusDemandEnum.TRAITER) {
+    <div>
+     <span
+             [attr.class]="cn('tw-py-1 tw-text-nowrap tw-flex-nowrap px-2 tw-shrink-0 tw-inline-flex tw-items-center tw-gap-x-1  tw-bg-teal-100 tw-text-teal-800 tw-rounded-full', haveIcon ? 'tw-text-sm tw-font-semibold' : 'tw-font-medium')">
+               @if (haveIcon) {
+                   <svg class="tw-shrink-0 tw-size-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m10.85 13.75l-1.425-1.425q-.3-.3-.7-.3t-.7.3t-.3.713t.3.712l2.1 2.125q.3.3.713.3t.712-.3l4.25-4.25q.3-.3.3-.712t-.3-.713t-.712-.3t-.713.3zM4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h5.175q.4 0 .763.15t.637.425L12 6h8q.825 0 1.413.588T22 8v10q0 .825-.587 1.413T20 20z"/></svg>
+               }
+         {{ getStatus(status) }}
+     </span>
+    </div>
+}
+
+
+
+@if (status == StatusDemandEnum.INSPECTION) {
+    <div>
+     <span
+             [attr.class]="cn('tw-py-1 tw-text-nowrap tw-flex-nowrap px-2 tw-shrink-0 tw-inline-flex tw-items-center tw-gap-x-1  tw-bg-blue-100 tw-text-blue-800 tw-rounded-full', haveIcon ? 'tw-text-sm tw-font-semibold' : 'tw-font-medium')">
+               @if (haveIcon) {
+                   <svg class="tw-shrink-0 tw-size-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2m0 18a8 8 0 1 1 8-8a8.009 8.009 0 0 1-8 8m-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+               }
+         {{ getStatus(status) }}
+     </span>
+    </div>
+}
+
+
+
+
+
+@if (status == StatusDemandEnum.REJETER || status == StatusDemandEnum.REJET_DEFINITIF) {
+    <div>
+     <span
+             [attr.class]="cn('tw-py-1 tw-text-nowrap tw-flex-nowrap tw-shrink-0 px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-text-sm  tw-bg-red-100 tw-text-red-800 tw-rounded-full ', haveIcon ? 'tw-text-sm tw-font-semibold' : 'tw-font-medium')">
+       @if (haveIcon) {
+           <svg class="tw-shrink-0 tw-size-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                viewBox="0 0 24 24">
+           <path fill="currentColor"
+                 d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2m4.3 14.3a.996.996 0 0 1-1.41 0L12 13.41L9.11 16.3a.996.996 0 1 1-1.41-1.41L10.59 12L7.7 9.11A.996.996 0 1 1 9.11 7.7L12 10.59l2.89-2.89a.996.996 0 1 1 1.41 1.41L13.41 12l2.89 2.89c.38.38.38 1.02 0 1.41"/>
+         </svg>
+       }
+         REJETÉ
+     </span>
+    </div>
+}
+
+@if (status == StatusDemandEnum.REJETER_COMPLEMENT || status == StatusDemandEnum.REJET_COMPLEMENT || status == StatusDemandEnum.A_COMPLETER) {
+    <div>
+     <span
+             [attr.class]="cn('tw-py-1 tw-text-nowrap tw-flex-nowrap tw-shrink-0 px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-text-sm  tw-bg-red-100 tw-text-red-800 tw-rounded-full ', haveIcon ? 'tw-text-sm tw-font-semibold' : 'tw-font-medium')">
+       @if (haveIcon) {
+           <svg class="tw-shrink-0 tw-size-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                viewBox="0 0 24 24">
+           <path fill="currentColor"
+                 d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2m4.3 14.3a.996.996 0 0 1-1.41 0L12 13.41L9.11 16.3a.996.996 0 1 1-1.41-1.41L10.59 12L7.7 9.11A.996.996 0 1 1 9.11 7.7L12 10.59l2.89-2.89a.996.996 0 1 1 1.41 1.41L13.41 12l2.89 2.89c.38.38.38 1.02 0 1.41"/>
+         </svg>
+       }
+         REJETÉ COMPLEMENT
+     </span>
+    </div>
+}
+
+
+
+@if (status == StatusDemandEnum.ANNULER) {
+    <div>
+     <span
+             [attr.class]="cn('tw-py-1 tw-text-nowrap tw-flex-nowrap tw-shrink-0 px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-text-sm  tw-bg-red-100 tw-text-red-800 tw-rounded-full ', haveIcon ? 'tw-text-sm tw-font-semibold' : 'tw-font-medium')">
+       @if (haveIcon) {
+           <svg class="tw-shrink-0 tw-size-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m15.225 19.475l1.75-1.75l1.75 1.75l.75-.75L17.75 17l1.75-1.75l-.75-.75L17 16.25l-1.75-1.75l-.75.75L16.25 17l-1.75 1.75zM3 20v-6l8-2l-8-2V4l14.3 6H17q-2.925 0-4.962 2.063T10 17.05zm14 2q-2.075 0-3.537-1.463T12 17t1.463-3.537T17 12t3.538 1.463T22 17t-1.463 3.538T17 22"/></svg>
+       }
+         {{ content }}
+     </span>
+    </div>
+}
+
+
+@if (status == StatusDemandEnum.ACCEPTER) {
+    <div>
+     <span
+             [attr.class]="cn('tw-py-1 tw-text-nowrap tw-flex-nowrap tw-shrink-0 px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-text-sm  tw-bg-emerald-100 tw-text-emerald-800 tw-rounded-full ', haveIcon ? 'tw-text-sm tw-font-semibold' : 'tw-font-medium')">
+               @if (haveIcon) {
+                   <svg class="tw-shrink-0 tw-size-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"/></svg>
+               }
+         {{ getStatus(status) }}
+     </span>
+    </div>
+}
+
+
+
+
+@if (status == StatusDemandEnum.VALIDER) {
+    <div>
+     <span
+             [attr.class]="cn('tw-py-1 tw-text-nowrap tw-flex-nowrap tw-shrink-0 px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-text-sm  tw-bg-purple-100 tw-text-purple-800 tw-rounded-full ', haveIcon ? 'tw-text-sm tw-font-semibold' : 'tw-font-medium')">
+               @if (haveIcon) {
+                   <svg class="tw-shrink-0 tw-size-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M24 21v2l-1.5 1.5M29 3L3 15l12 2.5M29 3L15 17.5M29 3l-4.375 11.375M15 17.5l.625 2.875M29 23a5 5 0 1 1-10 0a5 5 0 0 1 10 0"/></svg>
+               }
+         {{ getStatus(status) }}
+     </span>
+    </div>
+}
+
+
+@if (status == StatusDemandEnum.SOUMIS) {
+    <div>
+     <span
+             [attr.class]="cn('tw-py-1 tw-text-nowrap tw-flex-nowrap tw-shrink-0 px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-text-sm tw-bg-yellow-100 tw-text-yellow-800 tw-rounded-full ', haveIcon ? 'tw-text-sm  tw-font-semibold' : 'tw-font-medium')">
+               @if (haveIcon) {
+                   <svg class="tw-shrink-0 tw-size-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M20.235 5.686c.432-1.195-.726-2.353-1.921-1.92L3.709 9.048c-1.199.434-1.344 2.07-.241 2.709l4.662 2.699l4.163-4.163a1 1 0 0 1 1.414 1.414L9.544 15.87l2.7 4.662c.638 1.103 2.274.957 2.708-.241z"/></g></svg>
+               }
+         {{ getStatus(status) }}
+     </span>
+    </div>
+}
+
+
+
+
+@if (status == StatusDemandEnum.ETUDE) {
+    <div>
+     <span
+             [attr.class]="cn('tw-py-1 tw-text-nowrap tw-flex-nowrap tw-shrink-0 px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-text-sm tw-bg-lime-100 tw-text-lime-800 tw-rounded-full ', haveIcon ? 'tw-text-sm  tw-font-semibold' : 'tw-font-medium')">
+               @if (haveIcon) {
+                   <svg  class="tw-shrink-0 tw-size-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 576 512"><path fill="currentColor" d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5m76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5"/></svg>
+               }
+         {{ getStatus(status) }}
+     </span>
+    </div>
+}
+
+
+@if (status == StatusDemandEnum.TRAITEMENT) {
+    <div>
+     <span
+             [attr.class]="cn('tw-py-1 tw-text-nowrap tw-flex-nowrap tw-shrink-0 px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-text-sm tw-bg-yellow-100 tw-text-yellow-800 tw-rounded-full ', haveIcon ? 'tw-text-sm  tw-font-semibold' : 'tw-font-medium')">
+               @if (haveIcon) {
+                   <svg class="tw-shrink-0 tw-size-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.804 15a1 1 0 0 0-1.366-.366l-1.732 1a1 1 0 0 0 1 1.732l1.732-1A1 1 0 0 0 6.804 15M3.706 8.366l1.732 1a1 1 0 1 0 1-1.732l-1.732-1a1 1 0 0 0-1 1.732M6 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1m11.196-3a1 1 0 0 0 1.366.366l1.732-1a1 1 0 1 0-1-1.732l-1.732 1A1 1 0 0 0 17.196 9M15 6.804a1 1 0 0 0 1.366-.366l1-1.732a1 1 0 1 0-1.732-1l-1 1.732A1 1 0 0 0 15 6.804m5.294 8.83l-1.732-1a1 1 0 1 0-1 1.732l1.732 1a1 1 0 0 0 1-1.732m-3.928 1.928a1 1 0 1 0-1.732 1l1 1.732a1 1 0 1 0 1.732-1ZM21 11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2m-9 7a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1m-3-.804a1 1 0 0 0-1.366.366l-1 1.732a1 1 0 0 0 1.732 1l1-1.732A1 1 0 0 0 9 17.196M12 2a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1"/></svg>
+               }
+         {{ getStatus(status) }}
+     </span>
+    </div>
+}
+
+
+<!--@if (status == StatusDemandEnum.NON_SOUMIS) {-->
+<!--  <div>-->
+<!--      <span-->
+<!--        [attr.class]="cn('tw-py-1 tw-text-nowrap tw-flex-nowrap tw-shrink-0 px-2  tw-inline-flex tw-items-center tw-gap-x-1  tw-bg-blue-100 tw-text-blue-800 tw-rounded-full ', haveIcon ? 'tw-text-sm tw-font-semibold' : 'tw-font-medium')">-->
+<!--                @if (haveIcon) {-->
+<!--                  <svg class="tw-shrink-0 tw-size-5" xmlns="http://www.w3.org/2000/svg" width="32" height="32"-->
+<!--                       viewBox="0 0 24 24">-->
+<!--                    <path fill="currentColor"-->
+<!--                          d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2S2 6.5 2 12s4.5 10 10 10m.3-14.71c.2-.18.44-.29.7-.29c.27 0 .5.11.71.29c.19.21.29.45.29.71c0 .27-.1.5-.29.71c-.21.19-.44.29-.71.29c-.26 0-.5-.1-.7-.29c-.19-.21-.3-.44-.3-.71c0-.26.11-.5.3-.71m-2.5 4.68s2.17-1.72 2.96-1.79c.74-.06.59.79.52 1.23l-.01.06c-.14.53-.31 1.17-.48 1.78c-.38 1.39-.75 2.75-.66 3c.1.34.72-.09 1.17-.39c.06-.04.11-.08.16-.11c0 0 .08-.08.16.03c.02.03.04.06.06.08c.09.14.14.19.02.27l-.04.02c-.22.15-1.16.81-1.54 1.05c-.41.27-1.98 1.17-1.74-.58c.21-1.23.49-2.29.71-3.12c.41-1.5.59-2.18-.33-1.59c-.37.22-.59.36-.72.45c-.11.08-.12.08-.19-.05l-.03-.06l-.05-.08c-.07-.1-.07-.11.03-.2"/>-->
+<!--                  </svg>-->
+<!--                }-->
+<!--        {{ content }}-->
+<!--      </span>-->
+<!--  </div>-->
+<!--<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M13 12.6V9q0-.425-.288-.712T12 8t-.712.288T11 9v3.975q0 .2.075.388t.225.337l2.8 2.8q.275.275.7.275t.7-.275t.275-.7t-.275-.7zM12 22q-1.875 0-3.512-.712t-2.85-1.925t-1.925-2.85T3 13t.713-3.512t1.924-2.85t2.85-1.925T12 4t3.513.713t2.85 1.925t1.925 2.85T21 13t-.712 3.513t-1.925 2.85t-2.85 1.925T12 22M2.05 7.3q-.275-.275-.275-.7t.275-.7L4.9 3.05q.275-.275.7-.275t.7.275t.275.7t-.275.7L3.45 7.3q-.275.275-.7.275t-.7-.275m19.9 0q-.275.275-.7.275t-.7-.275L17.7 4.45q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l2.85 2.85q.275.275.275.7t-.275.7"/></svg>-->
+<!--}-->
+
+
+@if (status == StatusDemandEnum.NON_SOUMIS) {
+    <div>
+     <span
+             class="tw-py-1 tw-text-sm tw-shrink-0 tw-text-nowrap tw-flex-nowrap px-2 tw-inline-flex tw-items-center tw-gap-x-1  tw-font-semibold tw-bg-gray-200 tw-text-gray-800 tw-rounded-full ">
+       {{ getStatus(status) }}
+     </span>
+    </div>
+}
+
+

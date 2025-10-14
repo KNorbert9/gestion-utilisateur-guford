@@ -1,0 +1,6 @@
+// @ts-nocheck
+/* eslint-disable */
+export const dfretDestinationIcon = {
+    data: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="Golf-Hole--Streamline-Ultimate.svg"><desc>Golf Hole Streamline Icon: https://streamlinehq.com</desc><path d="m11.25 0.75 0 18.75" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M11.25 2.25H22.5a0.75 0.75 0 0 1 0.576 1.23l-3.4 2.79a0.749 0.749 0 0 0 0 0.96l3.4 2.79a0.75 0.75 0 0 1 -0.576 1.23H11.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M14.24 15.9c4.343 0.46 7.51 1.9 7.51 3.6 0 2.071 -4.7 3.75 -10.5 3.75S0.75 21.571 0.75 19.5c0 -1.669 3.054 -3.084 7.276 -3.57" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/></svg>`,
+    name: 'destination' as const
+};
